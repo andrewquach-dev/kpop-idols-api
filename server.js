@@ -103,7 +103,7 @@ app.get('/api/groups/:groupName', (request, response) => {
         response.json(groups['secret']);
     }
 })
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
