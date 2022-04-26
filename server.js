@@ -103,12 +103,11 @@ app.get('/api/groups/:groupName', (request, response) => {
         response.json(groups['secret']);
     }
 })
-app.get('/api/randomIdol', (request, response) => {
-   const keys = Object.keys(list);
-   const randomIndex = keys[Math.floor(Math.random()*keys.length)];
-   const randomIdol = list[randomIndex];
-   response.json(randomIdol);
-})
+app.get('/api/randomIdol', ( response) => {
+    const keys = Object.keys(idols);
+    const randomIndex = keys[Math.floor(Math.random() * keys.length)];
+    response.json(idols[randomIndex]);
+});
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
