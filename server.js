@@ -6,61 +6,66 @@ const PORT = 8000;
 app.use(cors());
 
 let idols = {
-    'joy': {
-        'birthName': 'Park Soo Young',
-        'position': ['Lead Rapper', 'Sub Vocalist'],
-        'birthday': 'September 3, 1996',
-        'mbti': 'INFP'
-    },
-    'wendy': {
-        'birthName': 'Son Seung Wan',
-        'position': ['Main Vocalist'],
-        'birthday': 'February 21, 1994',
-        'mbti': 'ISFP'
-    },
-    'irene': {
-        'birthName': 'Bae Ju Hyun',
-        'position': ['Leader', 'Main Rapper', 'Lead Dancer', 'Sub Vocalist', 'Visual', 'Center'],
-        'birthday': 'March 29, 1991',
-        'mbti': 'INFJ'
-    }
-    ,
+        "joy":{
+            'stageName': "joy",
+            'birthName': 'Park Soo Young',
+            'position': ['Lead Rapper', 'Sub Vocalist'],
+            'birthday': 'September 3, 1996',
+            'mbti': 'INFP'
+        },
+       "wendy": {
+            'stageName': 'wendy',
+            'birthName': 'Son Seung Wan',
+            'position': ['Main Vocalist'],
+            'birthday': 'February 21, 1994',
+            'mbti': 'ISFP'
+        },
+        "irene":{
+            'stageName': 'irene',
+            'birthName': 'Bae Ju Hyun',
+            'position': ['Leader', 'Main Rapper', 'Lead Dancer', 'Sub Vocalist', 'Visual', 'Center'],
+            'birthday': 'March 29, 1991',
+            'mbti': 'INFJ'
+        }
+        ,
+       "seulgi": {
+            'stageName': 'seulgi',
+            'birthName': 'PaKang Seul Girk',
+            'position': ['Main Dancer', 'Lead Vocalist'],
+            'birthday': 'February 10, 1994', 'mbti': 'ISFP'
+        }
+        ,
+       "yeri": {
+            'stageName': 'yeri',
+            'birthName': 'Kim Ye Rim',
+            'position': ['Sub Vocalist', 'Sub Rapper', 'Maknae'],
+            'birthday': 'September 3, 1996',
+            'mbti': 'INFP'
+        }
+        ,"jihyo": {
+            'stageName': 'jihyo',
+            'birthName': 'Park Ji Hyo',
+            'position': ['Leader', 'Main Vocalist'],
+            'birthday': 'February 1, 1997',
+            'mbti': 'ISFP-T'
+        }
+        , "nayeon":{
+            'stageName': 'nayeon',
+            'birthName': 'Im Na Yeon',
+            'position': ['Lead Vocalist', 'Lead Dancer', 'Center', 'Face of the Group'],
+            'birthday': 'September 22, 1995',
+            'mbti': 'ISTP-A'
+        }
+        ,
+       "park": {
+            'stageName': 'park',
+            'birthName': 'Park',
+            'position': ['Trainee'],
+            'birthday': 'September 3, 1996',
+            'mbti': 'N/A'
+        }
+    
 
-    'seulgi': {
-        'birthName': 'PaKang Seul Girk',
-        'position': ['Main Dancer', 'Lead Vocalist'],
-        'birthday': 'February 10, 1994', 'mbti': 'ISFP'
-    }
-    ,
-
-    'yeri': {
-        'birthName': 'Kim Ye Rim',
-        'position': ['Sub Vocalist', 'Sub Rapper', 'Maknae'],
-        'birthday': 'September 3, 1996',
-        'mbti': 'INFP'
-    }
-    , 'jihyo': {
-        'birthName': 'Park Ji Hyo',
-        'position': ['Leader', 'Main Vocalist'],
-        'birthday': 'February 1, 1997',
-        'mbti': 'ISFP-T'
-    }
-    ,
-
-    'nayeon': {
-        'birthName': 'Im Na Yeon',
-        'position': ['Lead Vocalist', 'Lead Dancer', 'Center', 'Face of the Group'],
-        'birthday': 'September 22, 1995',
-        'mbti': 'ISTP-A'
-    }
-    ,
-
-    'park': {
-        'birthName': 'Park',
-        'position': ['Trainee'],
-        'birthday': 'September 3, 1996',
-        'mbti': 'N/A'
-    }
 }
 let groups = {
     'red velvet': {
@@ -93,7 +98,7 @@ app.get('/api/idols/:idolName', (request, response) => {
     } else {
         response.json(idols['park']);
     }
-})
+});
 app.get('/api/groups/:groupName', (request, response) => {
     const groupName = request.params.groupName.toLowerCase();
     console.log(groupName);
@@ -102,11 +107,12 @@ app.get('/api/groups/:groupName', (request, response) => {
     } else {
         response.json(groups['secret']);
     }
-})
-app.get('/api/randomIdol', ( response) => {
+});
+app.get('/api/randomIdol', (request, response) => {
     const keys = Object.keys(idols);
-    const randomIndex = keys[Math.floor(Math.random() * keys.length)];
-    response.json(idols[randomIndex]);
+    const randomIdol = keys[Math.floor(Math.random() * keys.length)];
+    console.log(randomIdol);
+    response.json(randomIdol);
 });
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server running on port ${PORT}`);
