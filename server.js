@@ -6,65 +6,69 @@ const PORT = 8000;
 app.use(cors());
 
 let idols = {
-        "joy":{
-            'stageName': "joy",
-            'birthName': 'Park Soo Young',
-            'position': ['Lead Rapper', 'Sub Vocalist'],
-            'birthday': 'September 3, 1996',
-            'mbti': 'INFP'
-        },
-       "wendy": {
-            'stageName': 'wendy',
-            'birthName': 'Son Seung Wan',
-            'position': ['Main Vocalist'],
-            'birthday': 'February 21, 1994',
-            'mbti': 'ISFP'
-        },
-        "irene":{
-            'stageName': 'irene',
-            'birthName': 'Bae Ju Hyun',
-            'position': ['Leader', 'Main Rapper', 'Lead Dancer', 'Sub Vocalist', 'Visual', 'Center'],
-            'birthday': 'March 29, 1991',
-            'mbti': 'INFJ'
-        }
-        ,
-       "seulgi": {
-            'stageName': 'seulgi',
-            'birthName': 'PaKang Seul Girk',
-            'position': ['Main Dancer', 'Lead Vocalist'],
-            'birthday': 'February 10, 1994', 'mbti': 'ISFP'
-        }
-        ,
-       "yeri": {
-            'stageName': 'yeri',
-            'birthName': 'Kim Ye Rim',
-            'position': ['Sub Vocalist', 'Sub Rapper', 'Maknae'],
-            'birthday': 'September 3, 1996',
-            'mbti': 'INFP'
-        }
-        ,"jihyo": {
-            'stageName': 'jihyo',
-            'birthName': 'Park Ji Hyo',
-            'position': ['Leader', 'Main Vocalist'],
-            'birthday': 'February 1, 1997',
-            'mbti': 'ISFP-T'
-        }
-        , "nayeon":{
-            'stageName': 'nayeon',
-            'birthName': 'Im Na Yeon',
-            'position': ['Lead Vocalist', 'Lead Dancer', 'Center', 'Face of the Group'],
-            'birthday': 'September 22, 1995',
-            'mbti': 'ISTP-A'
-        }
-        ,
-       "park": {
-            'stageName': 'park',
-            'birthName': 'Park',
-            'position': ['Trainee'],
-            'birthday': 'September 3, 1996',
-            'mbti': 'N/A'
-        }
-    
+    "joy": {
+        'stageName': "joy",
+        'birthName': 'Park Soo Young',
+        'position': ['Lead Rapper', 'Sub Vocalist'],
+        'birthday': 'September 3, 1996',
+        'mbti': 'INFP',
+        image: 'https://kprofiles.com/wp-content/uploads/2016/04/0062dQFugy1h0zuy86qtpj32e3388x6q_auto_x2-593x800.png'
+    },
+    "wendy": {
+        'stageName': 'wendy',
+        'birthName': 'Son Seung Wan',
+        'position': ['Main Vocalist'],
+        'birthday': 'February 21, 1994',
+        'mbti': 'ISFP',
+        image: 'https://kprofiles.com/wp-content/uploads/2016/04/FQPHv91XEAYR2T9_auto_x2-900x648.jpg'
+    },
+    "irene": {
+        'stageName': 'irene',
+        'birthName': 'Bae Ju Hyun',
+        'position': ['Leader', 'Main Rapper', 'Lead Dancer', 'Sub Vocalist', 'Visual', 'Center'],
+        'birthday': 'March 29, 1991',
+        'mbti': 'INFJ',
+        image: 'https://kprofiles.com/wp-content/uploads/2016/04/FQMs40nVIAEpxYp_auto_x2-900x648.jpg'
+    }
+    ,
+    "seulgi": {
+        'stageName': 'seulgi',
+        'birthName': 'PaKang Seul Girk',
+        'position': ['Main Dancer', 'Lead Vocalist'],
+        'birthday': 'February 10, 1994', 'mbti': 'ISFP',
+        image: 'https://kprofiles.com/wp-content/uploads/2016/04/0062dQFugy1h0z6e03udpj32de37pe84-590x800.png'
+    }
+    ,
+    "yeri": {
+        'stageName': 'yeri',
+        'birthName': 'Kim Ye Rim',
+        'position': ['Sub Vocalist', 'Sub Rapper', 'Maknae'],
+        'birthday': 'September 3, 1996',
+        'mbti': 'INFP'
+    }
+    , "jihyo": {
+        'stageName': 'jihyo',
+        'birthName': 'Park Ji Hyo',
+        'position': ['Leader', 'Main Vocalist'],
+        'birthday': 'February 1, 1997',
+        'mbti': 'ISFP-T'
+    }
+    , "nayeon": {
+        'stageName': 'nayeon',
+        'birthName': 'Im Na Yeon',
+        'position': ['Lead Vocalist', 'Lead Dancer', 'Center', 'Face of the Group'],
+        'birthday': 'September 22, 1995',
+        'mbti': 'ISTP-A'
+    }
+    ,
+    "park": {
+        'stageName': 'park',
+        'birthName': 'Park',
+        'position': ['Trainee'],
+        'birthday': 'September 3, 1996',
+        'mbti': 'N/A'
+    }
+
 
 }
 let groups = {
@@ -99,6 +103,7 @@ app.get('/api/idols/:idolName', (request, response) => {
         response.json(idols['park']);
     }
 });
+
 app.get('/api/groups/:groupName', (request, response) => {
     const groupName = request.params.groupName.toLowerCase();
     console.log(groupName);
@@ -108,12 +113,14 @@ app.get('/api/groups/:groupName', (request, response) => {
         response.json(groups['secret']);
     }
 });
+
 app.get('/api/randomIdol', (request, response) => {
     const keys = Object.keys(idols);
     const randomIdol = keys[Math.floor(Math.random() * keys.length)];
-    console.log(randomIdol);
-    response.json(randomIdol);
+    console.log(idols[randomIdol]);
+    response.json(idols[randomIdol]);
 });
+
 app.listen(process.env.PORT || PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
