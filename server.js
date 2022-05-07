@@ -44,21 +44,24 @@ let idols = {
         'birthName': 'Kim Ye Rim',
         'position': ['Sub Vocalist', 'Sub Rapper', 'Maknae'],
         'birthday': 'September 3, 1996',
-        'mbti': 'INFP'
+        'mbti': 'INFP',
+        image: 'https://kprofiles.com/wp-content/uploads/2016/04/IMG_6294_auto_x2-900x648.jpg'
     }
     , "jihyo": {
         'stageName': 'jihyo',
         'birthName': 'Park Ji Hyo',
         'position': ['Leader', 'Main Vocalist'],
         'birthday': 'February 1, 1997',
-        'mbti': 'ISFP-T'
+        'mbti': 'ISFP-T',
+        image: 'https://kprofiles.com/wp-content/uploads/2016/05/Jihyo-900x601.jpg'
     }
     , "nayeon": {
         'stageName': 'nayeon',
         'birthName': 'Im Na Yeon',
         'position': ['Lead Vocalist', 'Lead Dancer', 'Center', 'Face of the Group'],
         'birthday': 'September 22, 1995',
-        'mbti': 'ISTP-A'
+        'mbti': 'ISTP-A',
+        image:'https://kprofiles.com/wp-content/uploads/2016/05/Nayeon-900x600.jpg'
     }
     ,
     "park": {
@@ -66,7 +69,8 @@ let idols = {
         'birthName': 'Park',
         'position': ['Trainee'],
         'birthday': 'September 3, 1996',
-        'mbti': 'N/A'
+        'mbti': 'N/A',
+        image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIIeNZ-NOv0PRSi8eRp5eeBsJKTpr5AMatrg&usqp=CAU'
     }
 
 
