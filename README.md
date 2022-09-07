@@ -1,5 +1,4 @@
-<div align="center"><img src="https://www.geekgirlauthority.com/wp-content/uploads/2016/10/KPop.jpg" alt="Kpop" align="center"></div>
-
+<div align="center"><img src="finger-heart-med.png" alt="Kpop" align="center"></div>
 <h1 align="center">Kpop Idols API</h1>
 <h2 align="center">A fan-built API supplying information about your favorite kpop idol.</h3>
 
