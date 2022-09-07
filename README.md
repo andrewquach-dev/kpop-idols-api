@@ -23,7 +23,7 @@
 
 - API is live at: [Heroku API page](https://kpop-idols-api.herokuapp.com/)
 
-- Initial client side page is live at: [Client side page](https://kpop-idols-api.herokuapp.com/)
+- Initial client side page is live at: [Client side page](https://ndrwquach.github.io/kpop-idols-api-client/)
 
 ### :blush: Thank you!
 
